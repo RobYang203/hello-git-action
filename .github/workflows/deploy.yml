@@ -12,9 +12,9 @@ jobs:
       - name: deploy to vm
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.LINODE_HOST }}
-          username: ${{ secrets.LINODE_USERNAME }}
-          key: ${{ secrets.LINODE_SSHKEY }}
+          host: 172.104.165.41
+          username: root
+          key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDDoN9XPtxZNMJsDPsf0++/IXISR29Wch/+MHKEb5Cui4qBL6wN8jKtOnqMRF7QISVT/vqsPl6cWZhjLRNgjSurylFoCJQQ+qH91tFTWpQlAz3Z2xjCkdsXlK8zW8Joy3wG0wwvZpWNLEMY7S6JjH5LJRfyTozsI6O/cvJd3vRQv21tyaOFgeXtIn1ZpvTgKLqWCL7w+q0jC+QL47Ec48Vi7miTAhZ1iP75MMI7MZcewHbO06vBv/37ewFVCxQdJkeKyo5Yyobjj1EIX46Il1oN2bvhinjWWa8se395T2VLrwx1a7Uy5/ih/zicy2Ydf5WGB09cvYwUn2Jo25lCRr5BJj/X6Bb6ryXvCUduX/wTu1WcD4/q+lfcbQMQ6ziJymHSW38GrpTwolxWq4jWG+XGNserRpqBKfHOgsS7iajaczB8Onw1SQ2yMb2rMFU1WUTGVh4LLHzoGtaXldpVafpLiJqxpnXiYawRyAZ3HCJD8CtJp3dRuvl2mF1s1gDeYXxcnQFN0wUM+QBqXNSMrbM7YsTcBE8XF3FIXFEnNnbsu06R6jNjap9fxwt/EJOVzYaNEFnrVcP+UGGWpkydHwgc494ZT3CdIDhD6a4POy6qdsM9PJYxcrDSHa0DmF/DBjX1X2WGX7htSmYVRNhTr3f5xJf2jQCezqMUjdrdZIWzuQ== tony@yangchongyuande-MacBook-Pro.local
           script: |
             cd /var/www/testnode.com
             mkdir test
