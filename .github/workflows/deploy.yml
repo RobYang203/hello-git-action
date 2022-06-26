@@ -20,4 +20,4 @@ jobs:
           key: ${{ secrets.LINODE_SSHKEY }}
           script: |
             cd /var/www/testnode.com/${{ env.BRANCH_NAME }}/current/
-            pm2 deploy ecosystem.config.js ${{ env.BRANCH_NAME }} update  
+            pm2 deploy ecosystem.config.js --only ${{ env.BRANCH_NAME }} update  
