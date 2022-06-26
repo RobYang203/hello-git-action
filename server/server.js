@@ -1,7 +1,5 @@
 const express = require('express');
 
-const POST = 3000;
-
 const app = express();
 
 app.get('/', function (req, res) {
@@ -9,4 +7,4 @@ app.get('/', function (req, res) {
 })
 
 console.log('test...' , process.env);
-app.listen(POST);
+app.listen(process.env.POST);
