@@ -7,4 +7,4 @@ app.get('/', function (req, res) {
 })
 
 console.log('test...' , process.env);
-app.listen(process.env.POST);
+app.listen(process.env.PORT);
