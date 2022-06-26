@@ -17,4 +17,4 @@ jobs:
           key: ${{ secrets.LINODE_SSHKEY }}
           script: |
             cd /etc/testnode.com
-            pm2 deploy ecosystem.config.js develop setup  
+            pm2 deploy ecosystem.config.js develop update  
