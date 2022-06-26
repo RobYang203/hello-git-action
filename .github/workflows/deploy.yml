@@ -19,5 +19,5 @@ jobs:
           username: ${{ secrets.LINODE_USERNAME }}
           key: ${{ secrets.LINODE_SSHKEY }}
           script: |
-            cd /var/www/testnode.com/current/${{ env.BRANCH_NAME }}
+            cd /var/www/testnode.com/${{ env.BRANCH_NAME }}/current/
             pm2 deploy ecosystem.config.js ${{ env.BRANCH_NAME }}g update  
