@@ -2,12 +2,15 @@ name: project deploy
 
 on:
   push:
-    branches: [master , develop]
+    branches: [prod , dev]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Set env variables
+        run: |
+          echo "BRANCH_NAME=$(git branch --show-current)" >> $GITHUB_ENV
       - uses: actions/checkout@v2
       - name: deploy to vm
         uses: appleboy/ssh-action@master
@@ -16,5 +19,5 @@ jobs:
           username: ${{ secrets.LINODE_USERNAME }}
           key: ${{ secrets.LINODE_SSHKEY }}
           script: |
-            cd /var/www/testnode.com/current/
-            pm2 deploy ecosystem.config.js develop update  
+            cd /var/www/testnode.com/current/${{ env.BRANCH_NAME }}
+            pm2 deploy ecosystem.config.js ${{ env.BRANCH_NAME }} update  
