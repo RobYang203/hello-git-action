@@ -22,13 +22,13 @@ jobs:
       - name: check fail
         if: steps.checkTest.outcome != 'success'
         run: |
-          echo email: $GITHUB_ACTION_PATH
+          echo email: $secrets.EMAIL_ADDRESS
           npm run email
           exit 1
         env:
           EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS }}
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
-          GITHUB_ACTION_PATH: ${GITHUB_ACTION_PATH}
+          GITHUB_ACTION_PATH: $GITHUB_ACTION_PATH
   cd:
     needs: [ci]
     runs-on: ubuntu-latest
