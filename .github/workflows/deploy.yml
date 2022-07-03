@@ -22,7 +22,7 @@ jobs:
       - name: check fail
         if: steps.checkTest.outcome != 'success'
         run: |
-          echo "action path $GITHUB_ACTION_PATH"
+          echo "action path $GITHUB_REPOSITORY"
           npm run email
           exit 1
         env:
