@@ -16,7 +16,12 @@ jobs:
       - name: install dependencies
         run: npm ci
       - name: run test
+        id: checkTest
         run: npm test
+        continue-on-error: true
+      - name: check fail
+        if: steps.checkTest.outcome != 'success'
+        run: exit 1
   cd:
     needs: [ci]
     runs-on: ubuntu-latest
