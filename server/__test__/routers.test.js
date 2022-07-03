@@ -7,6 +7,6 @@ describe('test server....', () => {
   it('test [GET] root router', async () => {
     const res = await requestWithSupertest.get('/');
 
-    expect(res.status).toBe(200);
+    expect(res.status).toBe(400);
   });
 });
