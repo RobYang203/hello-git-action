@@ -6,5 +6,5 @@ app.get('/', function (req, res) {
     res.send('Hello World~~~! <br/> Hello '+ process.env.NODE_ENV)
 })
 
-console.log('test...' , process.env);
+console.log('test....' , process.env);
 app.listen(process.env.PORT);
