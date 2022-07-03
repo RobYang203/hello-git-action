@@ -16,5 +16,5 @@ transporter.sendMail({
   to: '101m.tony.yang@gmail.com',
   subject: 'github error',
   html: `<div>Github action fail , 
-  please check <a href='${process.env.GITHUB_ACTION_PATH}' target='_blank'>link</a></div>`,
+  please check <a href='${process.env.ACTION_PATH}' target='_blank'>link</a></div>`,
 });

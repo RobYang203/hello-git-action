@@ -27,7 +27,7 @@ jobs:
         env:
           EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS }}
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
-          GITHUB_ACTION_PATH: ${{$GITHUB_ACTION_PATH}}
+          ACTION_PATH: ${{GITHUB_ACTION_PATH}}
   cd:
     needs: [ci]
     runs-on: ubuntu-latest
