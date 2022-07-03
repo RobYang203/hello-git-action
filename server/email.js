@@ -15,5 +15,6 @@ const transporter = nodemailer.createTransport({
 transporter.sendMail({
   to: '101m.tony.yang@gmail.com',
   subject: 'github error',
-  html: '<div>github action fail , please check</div>'
-})
+  html: `<div>Github action fail , 
+  please check <a href='${process.env.GITHUB_ACTION_PATH}' target='_blank'>link</a></div>`,
+});
